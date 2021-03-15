@@ -33,12 +33,7 @@ public class Main {
 				for (Transition trans : state.getOutgoingTransitions()) {
  					State next = (State) trans.getTarget();
  					System.out.println(state.getName() + " -> " + next.getName());
- 				}
-				
-				if(state.getOutgoingTransitions().isEmpty()) {
-					System.out.println("It's a trap" + state.getName());
-				}
-					
+ 				}			
 			}
 		}
 		
