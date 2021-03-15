@@ -29,16 +29,16 @@ public class RunStatechart {
 					s.runCycle();
 					print(s);
 					break;
-				case "black":
-					s.raiseBlack();
-					s.runCycle();
-					print(s);
-					break;
 				case "white":
 					s.raiseWhite();
 					s.runCycle();
 					print(s);
 					break;
+				case "black":
+					s.raiseBlack();
+					s.runCycle();
+					print(s);
+					break;	
 				case "exit":
 					run = false;
 					print(s);

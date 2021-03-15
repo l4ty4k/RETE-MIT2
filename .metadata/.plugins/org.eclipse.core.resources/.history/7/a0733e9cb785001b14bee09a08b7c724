@@ -99,14 +99,14 @@ public class Main {
 		out += "		while(run) {\n";
 		out += "			input = buffrdr.readLine();\n";
 		out += "			switch (input) {\n";
-		out += "				case \"start\":\n";
+		out += "				case \"start:\n";
 		out += "					s.raiseStart();\n";
 		out += "					s.runCycle();\n";
 		out += "					print(s);\n";
 		out += "					break;\n";
 		for (int i = 0; i < events.size(); i++) {
-			out += "\t\t\t\tcase \"" + events.get(i) + "\":\n";
-			out += "\t\t\t\t\ts.raise" + events.get(i) + "();\n";
+			out += "\t\t\t\tcase \"" + events.get(i) + "();\n";
+			out += "\t\t\t\t\ts.raise" + events.get(i) + "\":\n";
 			out += "\t\t\t\t\tts.runCycle();\n";
 			out += "\t\t\t\t\tprint(s);\n";
 			out += "\t\t\t\t\tbreak;\n";

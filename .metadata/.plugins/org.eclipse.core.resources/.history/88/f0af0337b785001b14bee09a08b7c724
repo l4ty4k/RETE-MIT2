@@ -65,7 +65,7 @@ public class Main {
 				vars.add(variableDef.getName());
 			}
 		}
-		System.out.println(codegen2(events, vars));
+		System.out.println(codegen2(events));
 		
 		
 		// Transforming the model into a graph representation
@@ -84,7 +84,7 @@ public class Main {
 		return out;
 	}
 	
-	public static String codegen2(List<String> events,  List<String> vars) {
+	public static String codegen2(List<String> events ) {
 		String out = "";
 		out += "public class RunStatechart {	\n";
 		out += "	public static void main(String[] args) throws IOException {\n";
@@ -99,14 +99,14 @@ public class Main {
 		out += "		while(run) {\n";
 		out += "			input = buffrdr.readLine();\n";
 		out += "			switch (input) {\n";
-		out += "				case \"start\":\n";
+		out += "				case \"start:\n";
 		out += "					s.raiseStart();\n";
 		out += "					s.runCycle();\n";
 		out += "					print(s);\n";
 		out += "					break;\n";
 		for (int i = 0; i < events.size(); i++) {
-			out += "\t\t\t\tcase \"" + events.get(i) + "\":\n";
-			out += "\t\t\t\t\ts.raise" + events.get(i) + "();\n";
+			out += "\t\t\t\tcase \"" + events.get(i) + "();\n";
+			out += "\t\t\t\t\ts.raise" + events.get(i) + "\":\n";
 			out += "\t\t\t\t\tts.runCycle();\n";
 			out += "\t\t\t\t\tprint(s);\n";
 			out += "\t\t\t\t\tbreak;\n";
@@ -126,8 +126,8 @@ public class Main {
 		
 		 
 		out += "\tpublic static void print(IExampleStatemachine s) {\n";
-		for (int i = 0; i < vars.size(); i++) {
-			out += "\t\tSystem.out.println(\"" + vars.get(i).charAt(0) + "= \" + s.getSCInterface().get" + vars.get(i) + "());\n";
+		for (int i = 0; i < events.size(); i++) {
+			out += "\t\tSystem.out.println(\"" + events.get(i).charAt(0) + "= \" + s.getSCInterface().get" + events.get(i) + "());\n";
 		}
 		out += "\t}";
 		return out;
