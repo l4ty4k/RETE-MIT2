@@ -8,7 +8,6 @@ import org.yakindu.sct.model.sgraph.Statechart;
 
 import hu.bme.mit.model2gml.Model2GML;
 import hu.bme.mit.yakindu.analysis.modelmanager.ModelManager;
-import org.yakindu.sct.model.sgraph.Transition;
 
 public class Main {
 	@Test
@@ -30,10 +29,7 @@ public class Main {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
-				for (Transition trans : state.getOutgoingTransitions()) {
- 					State next = (State) trans.getTarget();
- 					System.out.println(state.getName() + " -> " + next.getName());
- 				}			
+				System.out.println(state.getName());
 			}
 		}
 		
