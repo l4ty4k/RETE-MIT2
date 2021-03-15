@@ -26,7 +26,6 @@ public class Main {
 		// Reading model
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
-		int nameIterator = 1;
 		while (iterator.hasNext()) {
 			EObject content = iterator.next();
 			if(content instanceof State) {
@@ -38,10 +37,6 @@ public class Main {
 				
 				if(state.getOutgoingTransitions().isEmpty()) {
 					System.out.println("It's a trap" + state.getName());
-				}
-				
-				if(state.getName().isEmpty()) {
-					System.out.println("State has non name, it could be: state_" + nameIterator);
 				}
 					
 			}

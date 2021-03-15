@@ -19,7 +19,7 @@
         <outgoingTransitions xmi:id="_kAS6sIWhEeuOI70OZfFBjA" specification="always" target="_izABIIWhEeuOI70OZfFBjA"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_a-EsQIWhEeuOI70OZfFBjA" name="Trap1" incomingTransitions="_gGpIkIWhEeuOI70OZfFBjA"/>
-      <vertices xsi:type="sgraph:State" xmi:id="_izABIIWhEeuOI70OZfFBjA" name="" incomingTransitions="_kAS6sIWhEeuOI70OZfFBjA"/>
+      <vertices xsi:type="sgraph:State" xmi:id="_izABIIWhEeuOI70OZfFBjA" name="Trap2" incomingTransitions="_kAS6sIWhEeuOI70OZfFBjA"/>
     </regions>
   </sgraph:Statechart>
   <notation:Diagram xmi:id="_6_tyoO11Eeaky9HhW8GsWQ" type="org.yakindu.sct.ui.editor.editor.StatechartDiagramEditor" element="_6_kosO11Eeaky9HhW8GsWQ" measurementUnit="Pixel">

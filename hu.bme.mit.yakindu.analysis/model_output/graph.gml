@@ -609,7 +609,7 @@ graph
 				text	"
 	specification = null
 	namespace = null
-	name = Trap2
+	name = 
 	documentation = 
 	orthogonal = false
 	simple = true
