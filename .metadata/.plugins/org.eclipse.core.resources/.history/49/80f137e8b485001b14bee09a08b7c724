@@ -107,11 +107,11 @@ public class Main {
 		out += "					print(s);\n";
 		out += "					break;\n";
 		for (int i = 0; i < events.size(); i++) {
-			out += "\t\t\t\tcase \"" + events.get(i) + "();\n";
-			out += "\t\t\t\t\ts.raise" + events.get(i) + "\":\n";
-			out += "\t\t\t\t\tts.runCycle();\n";
-			out += "\t\t\t\t\tprint(s);\n";
-			out += "\t\t\t\t\tbreak;\n";
+			out += "case \"" + events.get(i) + "();\n";
+			out += "s.raise" + events.get(i) + "\":\n";
+			out += "ts.runCycle();\n";
+			out += "print(s);\n";
+			out += "break;\n";
 		}
 		
 		out += "				case \"exit\":\n";
